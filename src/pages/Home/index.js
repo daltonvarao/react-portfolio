@@ -8,11 +8,12 @@ import {
   Container,
   ProfileContainer,
   ProfileTitle,
+  ProfilePicture,
   CardContainer,
   Card,
   CardTitle,
   CardBody,
-  CardActions
+  CardActions,
 } from "./styles";
 
 export default function Home() {
@@ -20,27 +21,27 @@ export default function Home() {
     {
       title: "Trabalhos e projetos",
       description: "Trabalhos que tenho desenvolvido ou finalizado.",
-      url: "/projects"
+      url: "/projects",
     },
     {
       title: "Contato",
       description: "Entrar em contato, mande um email ou mensagem.",
-      url: "/contact"
-    }
+      url: "/contact",
+    },
   ];
 
   return (
     <Container>
-      <div className="bg"></div>
       <ProfileContainer>
         <ProfileTitle>
           <h2>Olá, seja bem vinda(o), </h2>
           <h1>eu sou Dalton Felipe.</h1>
         </ProfileTitle>
+        <ProfilePicture />
       </ProfileContainer>
 
       <CardContainer>
-        {cards.map(card => (
+        {cards.map((card) => (
           <Card key={card.url}>
             <CardTitle>{card.title}</CardTitle>
             <CardBody>

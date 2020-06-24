@@ -2,55 +2,39 @@ import styled from "styled-components";
 
 const mdWidth = 768;
 
-let bgUrl =
-  "https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80";
-
 export const Container = styled.div`
-  div.bg {
-    background-image: url(${bgUrl});
-    transform: rotate(180deg);
-    background-repeat: no-repeat;
-    background-position-x: -900px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
   padding: 2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   max-width: 1024px;
   margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
 
   @media (min-width: ${mdWidth}px) {
-    div.bg {
-      background-position-x: unset;
-    }
-
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
     padding: 4rem;
   }
 `;
 
 export const ProfileContainer = styled.div`
   margin: 5rem 0;
+  flex-direction: column;
+  justify-content: center;
 
   h2 {
     font-weight: 400;
-    color: #fff;
-    font-size: 26px;
+    color: #101411;
+    font-size: 30px;
     line-height: 36px;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
-    color: #fff;
+    color: #101411;
     line-height: 36px;
   }
 
@@ -60,21 +44,33 @@ export const ProfileContainer = styled.div`
     margin: 0;
 
     h2 {
-      font-size: 30px;
+      font-size: 28px;
       color: #101411;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 30px;
       color: #101411;
     }
   }
 `;
 
-export const ProfileTitle = styled.div``;
+export const ProfileTitle = styled.div`
+  margin-bottom: 32px;
+`;
+
+export const ProfilePicture = styled.div`
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0fd;
+  background-image: url("https://avatars2.githubusercontent.com/u/26552270?s=460&u=e81c1b948fab91d4998d43cadbc76dd993ca316f&v=4");
+`;
 
 export const CardContainer = styled.div`
   @media (min-width: ${mdWidth}px) {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -84,7 +80,7 @@ export const CardContainer = styled.div`
 export const Card = styled.div`
   background-color: #fff;
   padding: 3rem 2.5rem;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.12);
   margin-bottom: 2rem;
   position: relative;
   height: 250px;
@@ -136,8 +132,6 @@ export const CardActions = styled.div`
     color: #5a45ff;
     width: 90px;
     transition: width 0.7s;
-
-    /* transform: rotate(180deg); */
   }
 
   a:hover {
