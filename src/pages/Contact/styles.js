@@ -24,7 +24,7 @@ export const ProfileContainer = styled.div`
 
   h2 {
     font-weight: 400;
-    color: #101411;
+    color: #f8f8f2;
     font-size: 26px;
     line-height: 36px;
   }
@@ -32,7 +32,7 @@ export const ProfileContainer = styled.div`
   h1 {
     font-size: 28px;
     font-weight: 700;
-    color: #101411;
+    color: #f8f8f2;
     line-height: 36px;
   }
 
@@ -42,15 +42,33 @@ export const ProfileContainer = styled.div`
     margin: 0;
 
     h2 {
-      font-size: 30px;
-      color: #101411;
+      font-size: 32px;
+      color: #f8f8f2;
     }
 
     h1 {
-      font-size: 32px;
-      color: #101411;
+      font-size: 28px;
+      color: #f8f8f2;
     }
   }
+`;
+
+export const Header = styled.div`
+  position: absolute;
+  top: 100;
+`;
+
+export const Backbutton = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: "#8be9fd";
+  span {
+    line-height: 28px;
+  }
+
+  cursor: pointer;
 `;
 
 export const ProfileTitle = styled.div`
@@ -75,15 +93,17 @@ export const CardContainer = styled.div`
 
 export const Card = styled.div`
   display: flex;
-  background-color: #fff;
-  padding: 2rem;
-  box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.12);
+  background-color: #44475a;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
   align-items: center;
   justify-content: space-between;
   width: 90%;
   align-self: center;
   cursor: pointer;
+  border-radius: 16px;
+  border: 3px solid #fff;
 
   div {
     display: flex;
@@ -100,18 +120,24 @@ export const Card = styled.div`
   }
 
   :hover {
-    box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.14);
+    border: 3px solid ${(props) => props.hoverColor};
+
+    svg.social-icon {
+      color: ${(props) => props.hoverColor} !important;
+    }
 
     svg.chevron {
       transform: rotate(90deg);
       transition: transform 0.5s;
     }
+
+    transition: all 0.5s;
   }
 `;
 
 export const CardText = styled.h1`
   font-size: 26px;
-  color: #101411;
+  color: #f8f8f2;
   font-weight: bold;
   margin-left: 32px;
 `;

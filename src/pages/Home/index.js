@@ -14,6 +14,8 @@ import {
   CardTitle,
   CardBody,
   CardActions,
+  SkillsList,
+  SkillsItem,
 } from "./styles";
 
 export default function Home() {
@@ -25,7 +27,7 @@ export default function Home() {
     },
     {
       title: "Contato",
-      description: "Entrar em contato, mande um email ou mensagem.",
+      description: "Entre em contato, mande um email ou mensagem.",
       url: "/contact",
     },
   ];
@@ -37,7 +39,16 @@ export default function Home() {
           <h2>Olá, seja bem vinda(o), </h2>
           <h1>eu sou Dalton Felipe.</h1>
         </ProfileTitle>
-        <ProfilePicture />
+        <ProfilePicture src="https://avatars2.githubusercontent.com/u/26552270?s=460&u=e81c1b948fab91d4998d43cadbc76dd993ca316f&v=4" />
+        <ProfileTitle color="#1a1a1a">
+          <h1>Fullstack developer</h1>
+        </ProfileTitle>
+        <SkillsList>
+          <SkillsItem>Python</SkillsItem>
+          <SkillsItem>Node.js</SkillsItem>
+          <SkillsItem>ReactJS</SkillsItem>
+          <SkillsItem>React Native</SkillsItem>
+        </SkillsList>
       </ProfileContainer>
 
       <CardContainer>
